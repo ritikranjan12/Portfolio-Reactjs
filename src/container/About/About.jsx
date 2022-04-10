@@ -25,7 +25,7 @@ const About = () => {
   },[])
   return (
     <>
-    <h2 className='head-text'>I know that <span>Good Development</span><br /> means <span>Good Buiseness</span>
+    <h2 className='head-text'>Learning new <span> Technologies </span><br /> gives <span>more Opportunity!</span>
     
     </h2>
 
