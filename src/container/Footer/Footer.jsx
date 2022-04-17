@@ -9,6 +9,8 @@ import './Footer.scss'
 
 const Footer = () => {
 
+  
+
   const handleSubmit = async () => {
    
     setLoading(true);
