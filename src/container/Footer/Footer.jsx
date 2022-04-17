@@ -32,6 +32,45 @@ const Footer = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = "Thank you for getting in touch";
     window.speechSynthesis.speak(msg);
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com',
+        'X-RapidAPI-Key': '283ad9f926msh1b52f18764a1427p113d65jsn6372c497a931'
+      },
+      body: `{
+        "personalizations":
+        [
+          {
+            "to":
+            [
+              {
+                "email":"ritik123453@gmail.com"
+              }
+            ],
+            "subject":"Someone Trying to Contact you"
+          }
+        ],
+        "from":
+        {
+          'email' : 'ritikranjan539@gmail.com'
+        },
+        "content":
+        [
+          {
+            "type":"text/plain",
+            "value":"Please check your Sanity backend for message"
+          }
+        ]
+      }`
+    };
+    
+    fetch('https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
 
   }
   const handleonchange = (e) => {
