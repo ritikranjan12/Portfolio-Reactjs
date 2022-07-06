@@ -67,7 +67,7 @@ const Footer = () => {
       }`
     };
     
-    fetch('https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send', options)
+    await fetch('https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send', options)
       .then(response => response.json())
       .then(response => console.log(response))
       .catch(err => console.error(err));
